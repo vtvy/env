@@ -1,0 +1,42 @@
+---
+title: Dev Env Guide
+description: A practical guide to setting up multi-language developer environments on Windows, macOS, and Linux.
+template: splash
+hero:
+  tagline: Stop fighting your PATH. Understand the layers, pick the right tool, ship faster onboarding.
+  actions:
+    - text: Start here
+      link: /env/start/introduction/
+      icon: right-arrow
+    - text: View on GitHub
+      link: https://github.com/vtvy/env
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Why this guide exists
+
+Most setup guides give you commands without the *why*. You copy them, something breaks weeks later, and nobody can explain what changed. This guide does the opposite — it explains the layers first (system, user, process, IDE, project), then shows you the tools that fit each layer, then gives you copy-paste recipes per OS.
+
+<CardGrid stagger>
+	<Card title="Understand the layers" icon="puzzle">
+		System env, user env, process env, IDE env, project env — and how `PATH` resolution decides which `python` wins.
+	</Card>
+	<Card title="Pick the right tool" icon="setting">
+		`mise` vs `nvm` vs `pyenv` vs `sdkman` vs `.venv` vs IDE interpreters. When each one is the right call.
+	</Card>
+	<Card title="Per-OS recipes" icon="laptop">
+		Windows (PowerShell 7 + scoop/winget), macOS (zsh + brew), Linux (apt/dnf + zsh). Side-by-side comparisons.
+	</Card>
+	<Card title="Shell that pays you back" icon="rocket">
+		`oh-my-posh` on PowerShell, `oh-my-zsh` on macOS/Linux. Git branch in prompt, autosuggestions, syntax highlighting.
+	</Card>
+	<Card title="AI-ready prompts" icon="comment">
+		Copy-paste prompts for Claude Code, Cursor, Copilot agents — preconfigured per OS.
+	</Card>
+	<Card title="Fix the classics" icon="warning">
+		"Works on my machine", PATH order conflicts, JAVA_HOME hell, IDE picks wrong Python — diagnosed and solved.
+	</Card>
+</CardGrid>
