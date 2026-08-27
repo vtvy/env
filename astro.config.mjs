@@ -7,7 +7,7 @@ import rehypeExternalLinks from 'rehype-external-links';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://vtvy.github.io',
-	base: '/env',
+	base: '/prompt-list',
 	markdown: {
 		rehypePlugins: [
 			[
@@ -21,72 +21,26 @@ export default defineConfig({
 	},
 	integrations: [
 		starlight({
-			title: 'Dev Env Guide',
+			title: 'Prompt List',
 			description:
-				'A practical guide to setting up multi-language developer environments on Windows, macOS, and Linux.',
+				'Copy-paste prompts for AI coding agents, with links to the original docs.',
 			plugins: [
 				starlightLlmsTxt({
-					projectName: 'Dev Env Guide',
+					projectName: 'Prompt List',
 					description:
-						'A practical guide to setting up multi-language developer environments (Node, Python, Java, etc.) on Windows, macOS, and Linux. Covers env scopes, PATH, version managers (mise, nvm, pyenv), shell setup (PowerShell + oh-my-posh, zsh + oh-my-zsh), and IDE interpreter selection.',
+						'A prompts dictionary for AI coding agents. Each entry is a copy-paste prompt for a common dev setup task, with a link to the official upstream documentation.',
 					details:
-						'Topic-first structure with per-OS tabs. Use this guide to understand *why* env setup breaks, not just the commands.',
+						'Use these prompts with Cursor, Claude Code, Copilot, or similar agents instead of following manual install guides.',
 				}),
 			],
 			social: [
 				{
 					icon: 'github',
 					label: 'GitHub',
-					href: 'https://github.com/vtvy/env',
+					href: 'https://github.com/vtvy/prompt-list',
 				},
 			],
-			sidebar: [
-				{
-					label: 'Start here',
-					items: [
-						{ label: 'Introduction', slug: 'start/introduction' },
-						{ label: 'Pick your OS', slug: 'start/pick-your-os' },
-					],
-				},
-				{
-					label: 'Concepts',
-					items: [
-						{ label: 'Environment scopes', slug: 'concepts/scopes' },
-						{ label: 'How PATH works', slug: 'concepts/path' },
-						{ label: 'Terminal vs IDE', slug: 'concepts/terminal-vs-ide' },
-					],
-				},
-				{
-					label: 'Install package managers',
-					items: [{ label: 'Overview', slug: 'install/overview' }],
-				},
-				{
-					label: 'Version managers',
-					items: [
-						{ label: 'mise (recommended)', slug: 'version-mgrs/mise' },
-						{ label: 'Traditional tools', slug: 'version-mgrs/traditional' },
-					],
-				},
-				{
-					label: 'Shell setup',
-					items: [
-						{ label: 'PowerShell + oh-my-posh', slug: 'shell/powershell' },
-						{ label: 'zsh + oh-my-zsh', slug: 'shell/zsh' },
-					],
-				},
-				{
-					label: 'IDE',
-					items: [{ label: 'Interpreter selection', slug: 'ide/interpreter' }],
-				},
-				{
-					label: 'Recipes',
-					items: [{ label: 'Overview', slug: 'recipes/overview' }],
-				},
-				{
-					label: 'AI prompts',
-					items: [{ label: 'Overview', slug: 'ai-prompts/overview' }],
-				},
-			],
+			sidebar: [{ label: 'Install mise', link: './#install-mise' }],
 		}),
 	],
 });

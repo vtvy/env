@@ -1,8 +1,8 @@
-# env — Dev Environment Guide
+# prompt-list — AI Prompts Dictionary
 
-A practical guide to setting up multi-language developer environments on **Windows, macOS, and Linux**.
+Copy-paste prompts for AI coding agents, with links to the original docs.
 
-Live site: <https://vtvy.github.io/env>
+Live site: <https://vtvy.github.io/prompt-list>
 
 Built with [Astro Starlight](https://starlight.astro.build) and deployed to GitHub Pages.
 
@@ -10,7 +10,7 @@ Built with [Astro Starlight](https://starlight.astro.build) and deployed to GitH
 
 ```sh
 npm install
-npm run dev      # local server at http://localhost:4321/env
+npm run dev      # local server at http://localhost:4321/prompt-list
 npm run build    # static build to ./dist
 npm run preview  # preview the production build
 ```
@@ -19,17 +19,10 @@ npm run preview  # preview the production build
 
 ```
 src/content/docs/
-├── start/          Introduction, OS picker
-├── concepts/       Env scopes, PATH, terminal vs IDE
-├── install/        Package managers per OS
-├── version-mgrs/   mise, nvm, pyenv, sdkman, .venv
-├── shell/          PowerShell + oh-my-posh, zsh + oh-my-zsh
-├── ide/            Interpreter selection
-├── recipes/        End-to-end stack walkthroughs
-└── ai-prompts/     Copy-paste prompts for AI coding agents
+└── index.mdx       Home page — one section per prompt
 ```
 
-Add a new page by dropping a `.md` or `.mdx` file in `src/content/docs/<section>/`, then wire it into the sidebar in `astro.config.mjs`.
+Add a new prompt as a `##` section in `index.mdx`, then add a sidebar link in `astro.config.mjs`.
 
 ## Deploy
 
@@ -37,4 +30,4 @@ Pushes to `main` trigger `.github/workflows/deploy.yml` which builds with [witha
 
 ## Contributing
 
-PRs welcome. Topics that need filling in are marked in the relevant section's overview page.
+PRs welcome. Each prompt should include: when to use it, the full prompt text, and a link to the official upstream docs.
